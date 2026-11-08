@@ -1,0 +1,70 @@
+name: Build
+
+# The schema of the API and the server have to build on every change.
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  definition:
+    name: Build the API definition
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: yarn
+          cache-dependency-path: api-definition/yarn.lock
+
+      - name: Install the dependencies
+        working-directory: api-definition
+        run: yarn install --frozen-lockfile
+
+      - name: Generate the documentation
+        working-directory: api-definition
+        run: yarn generate-docs
+
+      - name: Check that the documentation did not change
+        run: |
+          set -euo pipefail
+          if [ -n "$(git status --porcelain api-docs)" ]; then
+            echo "The generated documentation is not up to date."
+            echo "Run 'yarn generate-docs' in api-definition and commit the result."
+            git diff api-docs
+            exit 1
+          fi
+
+  server:
+    name: Build the server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: yarn
+          cache-dependency-path: api-server/yarn.lock
+
+      - name: Install the dependencies
+        working-directory: api-server
+        run: yarn install --frozen-lockfile
+
+      - name: Build the server
+        working-directory: api-server
+        run: yarn build

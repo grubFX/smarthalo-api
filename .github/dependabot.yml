@@ -1,0 +1,49 @@
+# Dependabot keeps the dependencies up to date.
+#
+# It opens a pull request for every new version, the build in the pull
+# request has to pass before it can be merged.
+
+version: 2
+
+updates:
+  # The schema of the API and the generator for the documentation.
+  - package-ecosystem: npm
+    directory: /api-definition
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Berlin
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    commit-message:
+      prefix: "build"
+
+  # The server implementation.
+  - package-ecosystem: npm
+    directory: /api-server
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Berlin
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    commit-message:
+      prefix: "build"
+
+  # The GitHub Actions of this repository.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Berlin
+    labels:
+      - dependencies
+      - ci
+    commit-message:
+      prefix: "ci"
