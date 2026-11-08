@@ -16,7 +16,10 @@ const userExists = async (email: string): Promise<boolean> => {
   }
 
   try {
-    return await model.exists({ email });
+    // Mongoose 6 returns the document with its id, or null if there is none.
+    // It is not a boolean.
+    const found = await model.exists({ email });
+    return found !== null;
   } catch (error) {
     throw error;
   }

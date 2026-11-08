@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import fastify, { RouteShorthandOptions } from "fastify";
-import fastifyCors from "fastify-cors";
-import fastifySensible from "fastify-sensible";
+import fastifyCors from "@fastify/cors";
+import fastifySensible from "@fastify/sensible";
 import routes from "./routes";
 
 const PORT: string | number = process.env.PORT || 3000;
@@ -21,7 +21,9 @@ export default async function () {
   await server.register(routes, {});
 
   try {
-    await server.listen(PORT, '::');
+    // Fastify 5 takes the options of the listen call as an object, the
+    // port and the host are fields in it.
+    await server.listen({ port: Number(PORT), host: "::" });
   } catch (err) {
     server.log.error(err);
     process.exit(1);
