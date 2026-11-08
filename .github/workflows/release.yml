@@ -1,0 +1,44 @@
+name: Release
+
+# The release follows the semantic versioning. The version comes from the
+# commit messages, semantic-release makes the tag and the changelog.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  packages: write
+
+jobs:
+  release:
+    name: Make the release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+        with:
+          # The tags are needed, semantic-release reads them to find out
+          # which version comes next.
+          fetch-depth: 0
+          # The release commit goes back into the branch.
+          ref: main
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Install the release tools
+        run: npm ci
+
+      - name: Make the release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
