@@ -40,10 +40,10 @@ The details are in [docs/original-server.md](docs/original-server.md).
 
 ## Build
 
-Needs Node and yarn.
+Needs Node and npm.
 
 ```
-cd api-definition && yarn install && yarn generate-docs
+cd api-definition && npm install && npm run generate-docs
 ```
 
 ## Attribution

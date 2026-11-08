@@ -50,7 +50,7 @@ services:
     volumes:
       - ./src:/app/src
     command: >
-      sh -c "cd /app && yarn start"
+      sh -c "cd /app && npm start"
     networks:
       - mongo-compose-network
 

@@ -22,8 +22,8 @@ The app side is in `smarthalo-app`, the firmware side in `smarthalo-firmware`.
 In `api-definition`:
 
 ```
-yarn generate-docs   # regenerate api.yml and the markdown docs
-yarn mock-server     # a mock server based on the API definition
+npm run generate-docs   # regenerate api.yml and the markdown docs
+npm run mock-server     # a mock server based on the API definition
 ```
 
 ## The original API

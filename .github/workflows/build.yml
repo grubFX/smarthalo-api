@@ -25,14 +25,14 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v7
         with:
-          node-version: '20'
-          cache: yarn
-          cache-dependency-path: api-server/yarn.lock
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: api-server/package-lock.json
 
       - name: Install the dependencies
         working-directory: api-server
-        run: yarn install --frozen-lockfile
+        run: npm ci
 
       - name: Build the server
         working-directory: api-server
-        run: yarn build
+        run: npm run build
