@@ -1,0 +1,49 @@
+# Working on this repository
+
+## Rules
+
+- All commits, docs, code comments and pull request descriptions are in English. The chat with the maintainer is in German, the repository is not.
+- Documentation is concise. No walls of text, one idea per line, no hard line breaks inside a paragraph.
+- No bold text and no em dashes or en dashes in the markdown. Use a plain hyphen for ranges.
+- Every claim in a document needs a link to its source. A link to the GitHub issue with the comment anchor, to the commit SHA, to the file with the line number, or to a URL. A claim without a source is a guess.
+- Do not copy code from another repository. Link it as a git submodule instead.
+- Check what goes into a commit before committing. Binaries, secrets and generated files need a deliberate decision.
+
+## The endpoint definitions
+
+`api-definition/` holds the API contract. The endpoints and models come from two places:
+
+- The decompiled app sources, they show what the app actually calls.
+- The original server middleware, published by the SmartHalo Community after the shutdown. It shows what the server actually did.
+
+The upstream repository is `aolde/smarthalo-api`, it is the `upstream` remote. Our work happens on `main` in this repository, the upstream is not modified.
+
+## Two response envelopes
+
+The app parses two different shapes, a replacement server has to serve both.
+
+- A plain object for login, signup and whoami.
+- A data array for ride, firmware and token refresh.
+
+Requests are wrapped the same way, the body is `{"data": {}}`.
+
+The details are in [docs/original-server.md](docs/original-server.md).
+
+## Layout
+
+- `api-definition/` - the TypeScript endpoint definitions and models
+- `api-docs/` - the generated API documentation
+- `api-server/` - the server implementation
+- `docs/` - notes on the original server
+
+## Build
+
+Needs Node and yarn.
+
+```
+cd api-definition && yarn install && yarn generate-docs
+```
+
+## Attribution
+
+See [docs/sources.md](docs/sources.md). Anything added from another project needs an entry there.
