@@ -1,10 +1,10 @@
 {
   "dependencies": {
-    "fastify": "^3.25.3",
+    "fastify": "^5.12.6",
     "fastify-cors": "^6.0.2",
     "fastify-sensible": "^3.1.2",
-    "mongodb": "^4.3.0",
-    "mongoose": "^6.1.7"
+    "mongodb": "^7.8.0",
+    "mongoose": "^6.13.10"
   },
   "devDependencies": {
     "@types/mongoose": "^5.11.97",
