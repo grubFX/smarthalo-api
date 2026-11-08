@@ -1,0 +1,11 @@
+# Normalise line endings in text files.
+* text=auto eol=lf
+
+# The lock files and the generated files keep their exact content.
+yarn.lock -text
+package-lock.json -text
+
+# Binary files never get a line ending conversion.
+*.png binary
+*.jpg binary
+*.pdf binary
