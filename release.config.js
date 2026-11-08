@@ -4,8 +4,8 @@
 // part, a feature raises the minor part, a commit that says
 // "BREAKING CHANGE" raises the major part.
 //
-// The release comes from the branch main. The branch develop is where the
-// work happens, it goes into main.
+// The release comes from the branch main. There is no other branch, the
+// work happens in a pull request and it goes into main.
 //
 // The rules are in the documentation of semantic-release.
 //

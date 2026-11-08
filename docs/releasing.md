@@ -17,11 +17,11 @@ are the ones that raise the version.
 
 ## The branches
 
-The release comes from the branch `main`. The branch `develop` is where the
-work happens, it goes into `main`.
+The release comes from the branch `main`. There is no other branch, the
+work happens in a pull request and it goes into `main`.
 
 ```
-develop  -->  main  -->  the release
+the pull request  -->  main  -->  the release
 ```
 
 The version of the library is in `gradle.properties` as `deviceVersion`. It
