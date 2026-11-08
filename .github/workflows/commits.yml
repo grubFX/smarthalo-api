@@ -1,0 +1,36 @@
+name: Commits
+
+# The commit messages have to follow the conventional commits. The hook of
+# the repository checks them before the commit is made, this workflow checks
+# the commits of a pull request again.
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Check the commit messages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+        with:
+          # The commits of the pull request are not in the history of the
+          # branch yet, they are fetched from the pull request.
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Install the commit linter
+        run: npm ci
+
+      - name: Check the commit messages
+        run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose

@@ -1,0 +1,21 @@
+{
+  "name": "smarthalo-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The commit linter for the repository.",
+  "scripts": {
+    "prepare": "simple-git-hooks",
+    "lint:commit": "commitlint --from origin/main --to HEAD"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "simple-git-hooks": "^2.14.0"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npx --no -- commitlint --edit $1"
+  },
+  "allowScripts": {
+    "simple-git-hooks@2.14.0": true
+  }
+}
