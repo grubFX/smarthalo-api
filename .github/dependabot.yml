@@ -6,21 +6,8 @@
 version: 2
 
 updates:
-  # The schema of the API and the generator for the documentation.
-  - package-ecosystem: npm
-    directory: /api-definition
-    schedule:
-      interval: weekly
-      day: monday
-      time: "06:00"
-      timezone: Europe/Berlin
-    open-pull-requests-limit: 5
-    labels:
-      - dependencies
-    commit-message:
-      prefix: "build"
-
-  # The server implementation.
+  # The server implementation. The schema of the API is not in here, the
+  # work on the cloud comes last.
   - package-ecosystem: npm
     directory: /api-server
     schedule:
