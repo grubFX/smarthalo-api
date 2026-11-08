@@ -2,6 +2,8 @@
 
 This repository is based on work published by others. Everything below is credited to its original author.
 
+The attribution of the other repositories of the project is in the [app repository](https://github.com/grubfx-dev/smarthalo-app/blob/main/docs/sources.md).
+
 ## The API definition and the server
 
 The endpoint definitions and the server implementation started as `aolde/smarthalo-api`:
