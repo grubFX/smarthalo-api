@@ -2,13 +2,13 @@
 
 All URIs are relative to *http://localhost*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteRide**](RidesApi.md#deleteRide) | **DELETE** /api/v2/rides/{ride_id} | 
-[**getRide**](RidesApi.md#getRide) | **GET** /v2/users/me/rides/{ride_id} | 
-[**getUserRides**](RidesApi.md#getUserRides) | **GET** /api/v1/users/rides | 
-[**updateRide**](RidesApi.md#updateRide) | **PATCH** /v2/users/me/rides/{ride_id} | 
-[**uploadUserRides**](RidesApi.md#uploadUserRides) | **POST** /api/v1/users/rides/sync | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteRide**](RidesApi.md#deleteRide) | **DELETE** /api/v2/rides/{ride_id} |  |
+| [**getRide**](RidesApi.md#getRide) | **GET** /v2/users/me/rides/{ride_id} |  |
+| [**getUserRides**](RidesApi.md#getUserRides) | **GET** /api/v1/users/rides |  |
+| [**updateRide**](RidesApi.md#updateRide) | **PATCH** /v2/users/me/rides/{ride_id} |  |
+| [**uploadUserRides**](RidesApi.md#uploadUserRides) | **POST** /api/v1/users/rides/sync |  |
 
 
 <a name="deleteRide"></a>
@@ -21,10 +21,10 @@ Method | HTTP request | Description
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ride\_id** | **Float**|  | [default to null]
- **x-access-token** | **String**|  | [default to null]
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **ride\_id** | **Float**|  | [default to null] |
+| **x-access-token** | **String**|  | [default to null] |
 
 ### Return type
 
@@ -49,11 +49,11 @@ Name | Type | Description  | Notes
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ride\_id** | **Float**|  | [default to null]
- **include** | **String**|  | [default to null]
- **x-access-token** | **String**|  | [default to null]
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **ride\_id** | **Float**|  | [default to null] |
+| **include** | **String**|  | [default to null] |
+| **x-access-token** | **String**|  | [default to null] |
 
 ### Return type
 
@@ -78,9 +78,9 @@ Name | Type | Description  | Notes
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x-access-token** | **String**|  | [default to null]
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **x-access-token** | **String**|  | [default to null] |
 
 ### Return type
 
@@ -105,11 +105,11 @@ Name | Type | Description  | Notes
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ride\_id** | **Float**|  | [default to null]
- **x-access-token** | **String**|  | [default to null]
- **PatchRideRequest** | [**PatchRideRequest**](../Models/PatchRideRequest.md)|  |
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **ride\_id** | **Float**|  | [default to null] |
+| **x-access-token** | **String**|  | [default to null] |
+| **PatchRideRequest** | [**PatchRideRequest**](../Models/PatchRideRequest.md)|  | |
 
 ### Return type
 
@@ -134,10 +134,10 @@ Name | Type | Description  | Notes
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x-access-token** | **String**|  | [default to null]
- **RideUploadPayload** | [**List**](../Models/RideUploadPayload.md)|  |
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **x-access-token** | **String**|  | [default to null] |
+| **RideUploadPayload** | [**List**](../Models/RideUploadPayload.md)|  | |
 
 ### Return type
 

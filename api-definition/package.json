@@ -6,8 +6,11 @@
         "@stoplight/prism-cli": "5.16.0",
         "@openapitools/openapi-generator-cli": "2.42.0"
     },
+    "overrides": {
+        "@types/node": "18.19.50"
+    },
     "scripts": {
         "mock-server": "prism mock api.yml",
-        "generate-docs": "spot generate -c api.ts -l yaml -g openapi3 -o . && openapi-generator generate -i api.yml -g markdown -o ../api-docs --skip-validate-spec && cp api.yml ../api-docs/api.yml"
+        "generate-docs": "spot generate -c api.ts -l yaml -g openapi3 -o . && openapi-generator-cli generate -i api.yml -g markdown -o ../api-docs --skip-validate-spec && cp api.yml ../api-docs/api.yml"
     }
 }

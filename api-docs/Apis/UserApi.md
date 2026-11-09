@@ -2,11 +2,11 @@
 
 All URIs are relative to *http://localhost*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getUser**](UserApi.md#getUser) | **GET** /api/v1/users/whoami | 
-[**sendConfirm**](UserApi.md#sendConfirm) | **POST** /api/v1/users/sendConfirm | 
-[**updateUser**](UserApi.md#updateUser) | **POST** /api/v1/users/update | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getUser**](UserApi.md#getUser) | **GET** /api/v1/users/whoami |  |
+| [**sendConfirm**](UserApi.md#sendConfirm) | **POST** /api/v1/users/sendConfirm |  |
+| [**updateUser**](UserApi.md#updateUser) | **POST** /api/v1/users/update |  |
 
 
 <a name="getUser"></a>
@@ -19,9 +19,9 @@ Method | HTTP request | Description
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x-access-token** | **String**|  | [default to null]
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **x-access-token** | **String**|  | [default to null] |
 
 ### Return type
 
@@ -46,10 +46,10 @@ Name | Type | Description  | Notes
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x-access-token** | **String**|  | [default to null]
- **UserEmailRequest** | [**UserEmailRequest**](../Models/UserEmailRequest.md)|  |
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **x-access-token** | **String**|  | [default to null] |
+| **UserEmailRequest** | [**UserEmailRequest**](../Models/UserEmailRequest.md)|  | |
 
 ### Return type
 
@@ -74,10 +74,10 @@ Name | Type | Description  | Notes
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x-access-token** | **String**|  | [default to null]
- **UserUpdateRequest** | [**UserUpdateRequest**](../Models/UserUpdateRequest.md)|  |
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **x-access-token** | **String**|  | [default to null] |
+| **UserUpdateRequest** | [**UserUpdateRequest**](../Models/UserUpdateRequest.md)|  | |
 
 ### Return type
 

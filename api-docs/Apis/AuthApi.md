@@ -2,26 +2,26 @@
 
 All URIs are relative to *http://localhost*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**checkEmail**](AuthApi.md#checkEmail) | **POST** /auth/local/checkEmail | 
-[**forgotPassword**](AuthApi.md#forgotPassword) | **POST** /auth/forgot | 
-[**login**](AuthApi.md#login) | **POST** /auth/local/login | 
-[**refreshToken**](AuthApi.md#refreshToken) | **POST** /auth/local/refresh_tokens | 
-[**signup**](AuthApi.md#signup) | **POST** /auth/local/signup | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**checkEmail**](AuthApi.md#checkEmail) | **POST** /auth/local/checkEmail |  |
+| [**forgotPassword**](AuthApi.md#forgotPassword) | **POST** /auth/forgot |  |
+| [**login**](AuthApi.md#login) | **POST** /auth/local/login |  |
+| [**refreshToken**](AuthApi.md#refreshToken) | **POST** /auth/local/refresh_tokens |  |
+| [**signup**](AuthApi.md#signup) | **POST** /auth/local/signup |  |
 
 
 <a name="checkEmail"></a>
 # **checkEmail**
-> String checkEmail(inline\_object\_2)
+> String checkEmail(CheckEmail\_request)
 
 
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inline\_object\_2** | [**inline_object_2**](../Models/inline_object_2.md)|  |
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **CheckEmail\_request** | [**CheckEmail_request**](../Models/CheckEmail_request.md)|  | |
 
 ### Return type
 
@@ -38,15 +38,15 @@ Name | Type | Description  | Notes
 
 <a name="forgotPassword"></a>
 # **forgotPassword**
-> String forgotPassword(inline\_object\_3)
+> String forgotPassword(CheckEmail\_request)
 
 
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inline\_object\_3** | [**inline_object_3**](../Models/inline_object_3.md)|  |
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **CheckEmail\_request** | [**CheckEmail_request**](../Models/CheckEmail_request.md)|  | |
 
 ### Return type
 
@@ -63,15 +63,15 @@ Name | Type | Description  | Notes
 
 <a name="login"></a>
 # **login**
-> UserResponse login(inline\_object)
+> UserResponse login(Login\_request)
 
 
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inline\_object** | [**inline_object**](../Models/inline_object.md)|  |
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **Login\_request** | [**Login_request**](../Models/Login_request.md)|  | |
 
 ### Return type
 
@@ -88,19 +88,19 @@ Name | Type | Description  | Notes
 
 <a name="refreshToken"></a>
 # **refreshToken**
-> inline_response_200 refreshToken(inline\_object\_1)
+> RefreshToken_200_response refreshToken(RefreshToken\_request)
 
 
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inline\_object\_1** | [**inline_object_1**](../Models/inline_object_1.md)|  |
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **RefreshToken\_request** | [**RefreshToken_request**](../Models/RefreshToken_request.md)|  | |
 
 ### Return type
 
-[**inline_response_200**](../Models/inline_response_200.md)
+[**RefreshToken_200_response**](../Models/RefreshToken_200_response.md)
 
 ### Authorization
 
@@ -119,9 +119,9 @@ Name | Type | Description  | Notes
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **SignupRequest** | [**SignupRequest**](../Models/SignupRequest.md)|  |
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **SignupRequest** | [**SignupRequest**](../Models/SignupRequest.md)|  | |
 
 ### Return type
 
