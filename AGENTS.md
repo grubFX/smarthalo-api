@@ -3,9 +3,11 @@
 ## Rules
 
 - All commits, docs, code comments and pull request descriptions are in English. The chat with the maintainer is in German, the repository is not.
-- The commit messages follow the conventional commits, see
-  [docs/commits.md](docs/commits.md).
-- Documentation is concise. No walls of text, one idea per line, no hard line breaks inside a paragraph.
+- The commit messages follow the conventional commits, see [docs/commits.md](docs/commits.md).
+- Documentation is concise. No walls of text, one idea per paragraph.
+- A paragraph in the markdown is one line. There is no line length limit, a paragraph can be as long as it needs to be. Do not break a paragraph over several lines, the renderer joins them back together and the file only gets harder to read.
+- Write plain sentences. No jargon, no words that only make sense for the people who wrote the code.
+- Say it once. If two documents say the same thing, one of them links to the other.
 - No bold text and no em dashes or en dashes in the markdown. Use a plain hyphen for ranges.
 - Every claim in a document needs a link to its source. A link to the GitHub issue with the comment anchor, to the commit SHA, to the file with the line number, or to a URL. A claim without a source is a guess.
 - Do not copy code from another repository. Link it as a git submodule instead.
